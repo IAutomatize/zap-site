@@ -4,7 +4,7 @@ export default function Header() {
       <div className="container">
         <nav className="navbar">
           <a href="#/" className="logo">
-            <img src="./logo.png" alt="Logo Zap Empresarial" />
+            <img src="logo.png" alt="Logo Zap Empresarial" />
           </a>
           <ul className="nav-menu">
             <li><a href="#features">Funcionalidades</a></li>
