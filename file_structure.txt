@@ -1,0 +1,45 @@
+zap-site/
+├── .github/                      # Contém configurações do GitHub, como workflows de CI/CD.
+│   └── workflows/                # Armazena os workflows do GitHub Actions.
+│       └── deploy.yml            # Define o processo de build e deploy para o GitHub Pages.
+│
+├── dist/                         # Diretório de build (gerado automaticamente por 'npm run build'). Contém os arquivos de produção.
+│
+├── node_modules/                 # Contém todas as dependências do projeto (gerenciado pelo npm).
+│
+├── public/                       # Arquivos estáticos que são servidos diretamente.
+│   └── 404.html                  # Página 404 customizada para contornar o roteamento de SPAs no GitHub Pages.
+│
+├── src/                          # Diretório principal com todo o código-fonte da aplicação React.
+│   ├── components/               # Contém todos os componentes React reutilizáveis.
+│   │   ├── CampaignAnimation.jsx # Componente da animação de disparo de campanhas.
+│   │   ├── Dashboards.jsx        # Componente que renderiza os dashboards (Kanban e Gráfico).
+│   │   ├── Features.jsx          # Componente da seção de funcionalidades.
+│   │   ├── FinalCTA.jsx          # Componente da chamada para ação final.
+│   │   ├── Footer.jsx            # Componente do rodapé do site.
+│   │   ├── Header.jsx            # Componente do cabeçalho de navegação.
+│   │   ├── Hero.jsx              # Componente da seção principal (Hero).
+│   │   ├── HowItWorks.jsx        # Componente da seção "Como Funciona".
+│   │   ├── KanbanBoard.jsx       # Componente da visualização do quadro Kanban.
+│   │   ├── PerformanceChart.jsx  # Componente do gráfico de performance.
+│   │   ├── PromoSection.jsx      # Componente da seção promocional.
+│   │   ├── Reveal.jsx            # Componente utilitário para animações de "revelar" ao rolar a página.
+│   │   └── Section.jsx           # Componente genérico para criar seções padronizadas.
+│   │
+│   ├── pages/                    # Contém os componentes que representam páginas completas.
+│   │   ├── DashboardPage.jsx     # Página que exibe os dashboards (não utilizada diretamente na landing page).
+│   │   └── Home.jsx              # Componente da página inicial, que agrega todas as seções.
+│   │
+│   ├── App.jsx                   # Componente raiz que configura o roteamento da aplicação.
+│   └── main.jsx                  # Ponto de entrada da aplicação. Renderiza o componente App no DOM.
+│
+├── .gitignore                    # Especifica arquivos e pastas a serem ignorados pelo Git.
+├── .nojekyll                     # Arquivo vazio para instruir o GitHub Pages a não usar o Jekyll.
+├── favicon.ico                   # Ícone do site exibido na aba do navegador.
+├── index.html                    # Ponto de entrada HTML da aplicação. O React injeta o app aqui.
+├── logo.png                      # Logo do projeto.
+├── package-lock.json             # Grava as versões exatas das dependências do projeto.
+├── package.json                  # Define os metadados do projeto, scripts e dependências.
+├── script.js                     # Arquivo JavaScript legado (não utilizado atualmente).
+├── style.css                     # Folha de estilos principal com todo o CSS do projeto.
+└── vite.config.js                # Arquivo de configuração para o Vite (build tool). 
