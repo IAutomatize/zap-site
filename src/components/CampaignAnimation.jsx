@@ -1,108 +1,88 @@
-import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Section from './Section';
 import Reveal from './Reveal';
 
+const messages = Array.from({ length: 15 });
+
+const containerVariants = {
+  animate: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const messageVariants = (i) => ({
+  initial: { opacity: 0, x: 0, y: 0 },
+  animate: {
+    opacity: [0, 1, 1, 0],
+    x: [0, 200, 400, 600], // Ajuste a distância do percurso
+    y: [0, -50 + (i % 3) * 50, -50 + (i % 3) * 50, -50 + (i % 3) * 50], // Direciona para clientes
+    transition: {
+      duration: 2.5,
+      ease: 'easeInOut',
+      repeat: Infinity,
+      repeatDelay: 3,
+      delay: i * 0.2,
+    },
+  },
+});
+
 export default function CampaignAnimation() {
-  const [messages, setMessages] = useState([]);
-  
-  useEffect(() => {
-    // Gerar novas mensagens periodicamente
-    const interval = setInterval(() => {
-      if (messages.length < 15) {
-        setMessages(prev => [...prev, {
-          id: Date.now(),
-          x: Math.random() * 80,
-          y: Math.random() * 60 + 10,
-          scale: Math.random() * 0.3 + 0.7
-        }]);
-      } else {
-        setMessages(prev => {
-          const newMessages = [...prev];
-          newMessages.shift();
-          return [...newMessages, {
-            id: Date.now(),
-            x: Math.random() * 80,
-            y: Math.random() * 60 + 10,
-            scale: Math.random() * 0.3 + 0.7
-          }];
-        });
-      }
-    }, 600);
-
-    return () => clearInterval(interval);
-  }, [messages.length]);
-
   return (
-    <Section id="campaign" className="campaign-section">
+    <Section id="campaign-section" className="campaign-section">
       <div className="container">
         <Reveal>
-          <h2 className="section-title">Disparos em Massa</h2>
-          <p className="campaign-subtitle">Alcance milhares de clientes em segundos com nossa ferramenta de envio em massa</p>
+          <h2 className="section-title">
+            Alcance Milhares de Clientes em Segundos
+          </h2>
+          <p className="campaign-subtitle">
+            Envie campanhas, notificações e promoções para toda sua base de contatos de forma segmentada e eficiente.
+          </p>
         </Reveal>
 
         <div className="campaign-animation-container">
-          {/* Telefone origem */}
-          <div className="phone-container phone-source">
-            <div className="phone">
-              <div className="phone-header">
-                <span className="phone-title">Seu Negócio</span>
-              </div>
-              <div className="phone-body">
-                <div className="message-list">
-                  <div className="message-outgoing">Promoção Especial! 🎉</div>
-                  <div className="message-outgoing">50% de desconto hoje!</div>
-                  <div className="message-outgoing">Visite nossa loja!</div>
-                </div>
-              </div>
+          {/* Plataforma de Envio */}
+          <motion.div className="platform-hub">
+            <div className="platform-icon-container">
+              <i className="fa-solid fa-paper-plane"></i>
             </div>
+            <div className="platform-text">
+              <h4>Plataforma</h4>
+              <span>Central de Envios</span>
+            </div>
+          </motion.div>
+
+          {/* Área de Animação */}
+          <div className="animation-area">
+            <motion.div
+              className="messages-wrapper"
+              variants={containerVariants}
+              initial="initial"
+              animate="animate"
+            >
+              {messages.map((_, i) => (
+                <motion.div
+                  key={i}
+                  className="flying-message-bubble"
+                  variants={messageVariants(i)}
+                />
+              ))}
+            </motion.div>
           </div>
 
-          {/* Mensagens voando */}
-          <div className="messages-flying">
-            {messages.map(msg => (
-              <motion.div
-                key={msg.id}
-                className="flying-message"
-                initial={{ 
-                  x: 0, 
-                  y: 50, 
-                  scale: 1, 
-                  opacity: 0 
-                }}
-                animate={{ 
-                  x: `${msg.x}%`, 
-                  y: `${msg.y}%`, 
-                  scale: msg.scale, 
-                  opacity: [0, 1, 1, 0] 
-                }}
-                transition={{ 
-                  duration: 2.5, 
-                  ease: "easeInOut" 
-                }}
-              >
-                <div className="message-bubble">
-                  <div className="message-content">
-                    <span className="message-emoji">✉️</span>
-                  </div>
+          {/* Clientes */}
+          <div className="clients-group">
+            {['Cliente 1', 'Cliente 2', 'Cliente 3'].map((name, i) => (
+              <motion.div className="client-bubble" key={i}>
+                <div className="client-icon-container">
+                  <i className="fa-solid fa-user"></i>
+                </div>
+                <div className="client-text">
+                  <h4>{name}</h4>
+                  <span>Recebendo...</span>
                 </div>
               </motion.div>
-            ))}
-          </div>
-
-          {/* Telefones destino */}
-          <div className="phones-destination">
-            {[1, 2, 3].map(index => (
-              <Reveal key={index} delay={index * 0.2}>
-                <div className="phone-mini">
-                  <div className="phone-header-mini">
-                    <span className="phone-title-mini">Cliente {index}</span>
-                  </div>
-                  <div className="phone-body-mini">
-                    <div className="message-incoming-mini">Promoção Especial! 🎉</div>
-                  </div>
-                </div>
-              </Reveal>
             ))}
           </div>
         </div>
