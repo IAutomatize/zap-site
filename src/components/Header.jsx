@@ -11,7 +11,7 @@ export default function Header() {
             <li><a href="#how-it-works">Como Funciona</a></li>
             <li><a href="#cta">Começar Agora</a></li>
           </ul>
-          <a href="#/signup" className="cta-button nav-cta">Criar Conta Grátis</a>
+          <a href="http://192.168.15.7:3001/signup.html" className="cta-button nav-cta">Criar Conta Grátis</a>
         </nav>
       </div>
     </header>
