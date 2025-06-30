@@ -3,7 +3,7 @@ export default function Header() {
     <header className="main-header">
       <div className="container">
         <nav className="navbar">
-          <a href="#/" className="logo">
+          <a href="/logo.png" className="logo">
             <img src="/logo.png" alt="Logo Zap Empresarial" />
           </a>
           <ul className="nav-menu">
