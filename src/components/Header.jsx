@@ -3,7 +3,7 @@ export default function Header() {
     <header className="main-header">
       <div className="container">
         <nav className="navbar">
-          <a href="#/" className="logo">
+          <a href="/logo.png" className="logo">
             <img src="/logo.png" alt="Logo Zap Empresarial" />
           </a>
           <ul className="nav-menu">
@@ -11,7 +11,7 @@ export default function Header() {
             <li><a href="#how-it-works">Como Funciona</a></li>
             <li><a href="#cta">Começar Agora</a></li>
           </ul>
-          <a href="#/signup" className="cta-button nav-cta">Criar Conta Grátis</a>
+          <a href="https://app.zapempresarial.com/signup.html" className="cta-button nav-cta">Criar Conta Grátis</a>
         </nav>
       </div>
     </header>

@@ -119,7 +119,7 @@ export default function Hero() {
           
           <Reveal delay={0.2}>
             <div className="hero-cta-container">
-              <a href="/signup" className="cta-button hero-cta pulse">
+              <a href="https://app.zapempresarial.com/signup.html" className="cta-button hero-cta pulse">
                 Quero Organizar Meu Zap
               </a>
               <a href="#features" className="hero-secondary-link">

@@ -48,7 +48,7 @@ export default function PromoSection() {
               </div>
               
               <div className="promo-cta">
-                <a href="/signup" className="cta-button">Começar agora</a>
+                <a href="https://app.zapempresarial.com/signup.html" className="cta-button">Começar agora</a>
                 <div className="promo-customers">
                   <div className="customer-avatars">
                     <div className="customer-avatar">M</div>
