@@ -2121,3 +2121,26 @@ body {
         font-size: 2rem;
     }
 }
+
+.hero-secondary-link {
+    background: none;
+    border: none;
+    color: #fff;
+    padding: 0.8rem 1.2rem;
+    border-radius: 5px;
+    font-weight: 600;
+    margin-left: 2rem;
+    transition: background 0.2s, color 0.2s;
+    cursor: pointer;
+}
+
+.hero-secondary-link:hover {
+    background: var(--accent-red);
+    color: #fff;
+    text-decoration: none;
+}
+
+.arrow-down {
+    font-size: 1.2em;
+    margin-left: 0.2em;
+}
