@@ -136,7 +136,7 @@ export default function KanbanBoard() {
       <div className="container">
         <Reveal>
           <h2 className="section-title">Organize seu <span className="title-highlight">Atendimento</span></h2>
-          <p className="promo-subtitle">Visualize e gerencie suas conversas com nosso sistema Kanban intuitivo< (exemplo interativo)/p>
+          <p className="promo-subtitle">Visualize e gerencie suas conversas com nosso sistema Kanban intuitivo (exemplo interativo)</p>
         </Reveal>
         
         <Reveal delay={0.1}>
