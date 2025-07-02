@@ -12,7 +12,7 @@ export default function FinalCTA() {
           <p>Crie sua conta e experimente o poder do Zap Empresarial. Não requer cartão de crédito.</p>
         </Reveal>
         <Reveal delay={0.2}>
-          <a href="http://192.168.15.7:3001/signup.html" className="cta-button">Começar Agora, de Graça!</a>
+          <a href="https://app.zapempresarial.com/signup.html" className="cta-button">Começar Agora, de Graça!</a>
         </Reveal>
       </div>
     </Section>
