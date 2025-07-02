@@ -208,7 +208,7 @@ export default function PerformanceChart() {
       <div className="container">
         <Reveal>
           <h2 className="section-title">Acompanhe seu <span className="title-highlight">Desempenho</span></h2>
-          <p className="promo-subtitle">Métricas detalhadas para você tomar as melhores decisões</p>
+          <p className="promo-subtitle">Métricas detalhadas para você tomar as melhores decisões (exemplo interativo)</p>
         </Reveal>
         
         <div className="performance-content">
